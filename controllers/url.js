@@ -15,7 +15,7 @@ async function genarateShortUrl(req, res){
     const token = req.cookies['Token'];
     if(!token) return res.redirect('/login');
     const reqType = req.body.typeOfUrl;
-    var shortUrl = "http://localhost:8000/redirect/";
+    var shortUrl = "http://localhost:8000/";
     if(reqType === 'custom'){
         try{
         const s =shortUrl+req.body.customUrl;
@@ -57,7 +57,7 @@ async function genarateShortUrl(req, res){
 
 async function redirectToUrl(req, res){
     const shortid = req.params.url
-    const a = "http://localhost:8000/redirect/"
+    const a = "http://localhost:8000/"
     const urls = a+shortid;
     const entry = await url.findOneAndUpdate(
         {shorturl : urls},

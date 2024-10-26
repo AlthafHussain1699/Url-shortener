@@ -10,7 +10,7 @@ route.post("/post/url", genarateShortUrl);
 
 route.get("/get/analytics", returnanalytices);
 
-route.get("/redirect/:url", redirectToUrl);
+route.get("/:url", redirectToUrl);
 
 
 module.exports = route;
